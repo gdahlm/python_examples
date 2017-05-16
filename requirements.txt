@@ -1,0 +1,7 @@
+nose
+numpy
+recommonmark
+setuptools
+sphinx
+sphinx-autobuild
+sphinx_rtd_theme
