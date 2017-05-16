@@ -1,0 +1,442 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Basic Data Structures &mdash; python_examples 0.1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="python_examples 0.1.0 documentation" href="index.html"/>
+        <link rel="next" title="Recursive Functions" href="recursion.html"/>
+        <link rel="prev" title="Welcome to python_examples’s documentation!" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> python_examples
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Basic Data Structures</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="recursion.html">Recursive Functions</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">python_examples</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Basic Data Structures</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/data_structures.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="basic-data-structures">
+<h1>Basic Data Structures<a class="headerlink" href="#basic-data-structures" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<span class="target" id="module-data_structures"></span><p>Coding examples for basic data structures.</p>
+<blockquote>
+<div><ul class="simple">
+<li>arrays</li>
+<li>stacks</li>
+<li>queues</li>
+<li>deques</li>
+</ul>
+</div></blockquote>
+<dl class="class">
+<dt id="data_structures.DynamicArray">
+<em class="property">class </em><code class="descclassname">data_structures.</code><code class="descname">DynamicArray</code> &#x2192; array<a class="reference internal" href="_modules/data_structures.html#DynamicArray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#data_structures.DynamicArray" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Python</strong> implementation of an array, where existing
+capacity is doubled when new space is required.</p>
+<p>This demonstrates the advantages of amortization of costs
+over the life of a function.</p>
+<p>While the cost of doubling the array is expensive it is
+far less expensive than adding one cell over time.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">data_structures</span><span class="o">.</span><span class="n">DynamicArray</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">items</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">capacity</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;one&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">items</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">capacity</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;two&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">items</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">capacity</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">foo</span> <span class="o">=</span> <span class="p">[</span><span class="n">d</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">16</span><span class="p">)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">items</span>
+<span class="go">18</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="o">.</span><span class="n">capacity</span>
+<span class="go">32</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="data_structures.DynamicArray.append">
+<code class="descname">append</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/data_structures.html#DynamicArray.append"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#data_structures.DynamicArray.append" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="data_structures.ListDeque">
+<em class="property">class </em><code class="descclassname">data_structures.</code><code class="descname">ListDeque</code> &#x2192; deque<a class="reference internal" href="_modules/data_structures.html#ListDeque"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#data_structures.ListDeque" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implement a <strong>deque</strong> - Using python lists.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">q</span> <span class="o">=</span> <span class="n">data_structures</span><span class="o">.</span><span class="n">ListDeque</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span><span class="o">.</span><span class="n">is_empty</span><span class="p">()</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span> <span class="n">q</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span> <span class="n">q</span><span class="o">.</span><span class="n">lpush</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span> <span class="k">print</span><span class="p">(</span><span class="n">q</span><span class="o">.</span><span class="n">lpop</span><span class="p">())</span>
+<span class="go">3</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span> <span class="k">print</span><span class="p">(</span><span class="n">q</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span>
+<span class="go">3</span>
+<span class="go">2</span>
+<span class="go">1</span>
+<span class="go">0</span>
+<span class="go">0</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="data_structures.ListDeque.is_empty">
+<code class="descname">is_empty</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; bool<a class="reference internal" href="_modules/data_structures.html#ListDeque.is_empty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#data_structures.ListDeque.is_empty" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="data_structures.ListDeque.lpop">
+<code class="descname">lpop</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; item Left<a class="reference internal" href="_modules/data_structures.html#ListDeque.lpop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#data_structures.ListDeque.lpop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="data_structures.ListDeque.lpush">
+<code class="descname">lpush</code><span class="sig-paren">(</span><em>item</em><span class="sig-paren">)</span> &#x2192; bool Left<a class="reference internal" href="_modules/data_structures.html#ListDeque.lpush"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#data_structures.ListDeque.lpush" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="data_structures.ListDeque.pop">
+<code class="descname">pop</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; item Right<a class="reference internal" href="_modules/data_structures.html#ListDeque.pop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#data_structures.ListDeque.pop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="data_structures.ListDeque.push">
+<code class="descname">push</code><span class="sig-paren">(</span><em>item</em><span class="sig-paren">)</span> &#x2192; bool Right<a class="reference internal" href="_modules/data_structures.html#ListDeque.push"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#data_structures.ListDeque.push" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="data_structures.ListDeque.size">
+<code class="descname">size</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/data_structures.html#ListDeque.size"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#data_structures.ListDeque.size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="data_structures.ListQueue">
+<em class="property">class </em><code class="descclassname">data_structures.</code><code class="descname">ListQueue</code> &#x2192; queue<a class="reference internal" href="_modules/data_structures.html#ListQueue"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#data_structures.ListQueue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implement a <strong>queue</strong> - Using python lists</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">q</span> <span class="o">=</span> <span class="n">data_structures</span><span class="o">.</span><span class="n">ListQueue</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span> <span class="n">q</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span> <span class="k">print</span> <span class="n">q</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+<span class="go">0</span>
+<span class="go">1</span>
+<span class="go">2</span>
+<span class="go">3</span>
+<span class="go">4</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="data_structures.ListQueue.is_empty">
+<code class="descname">is_empty</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; bool<a class="reference internal" href="_modules/data_structures.html#ListQueue.is_empty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#data_structures.ListQueue.is_empty" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="data_structures.ListQueue.pop">
+<code class="descname">pop</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; item<a class="reference internal" href="_modules/data_structures.html#ListQueue.pop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#data_structures.ListQueue.pop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="data_structures.ListQueue.push">
+<code class="descname">push</code><span class="sig-paren">(</span><em>item</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/data_structures.html#ListQueue.push"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#data_structures.ListQueue.push" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="data_structures.ListQueue.size">
+<code class="descname">size</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/data_structures.html#ListQueue.size"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#data_structures.ListQueue.size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="data_structures.ListStack">
+<em class="property">class </em><code class="descclassname">data_structures.</code><code class="descname">ListStack</code> &#x2192; stack<a class="reference internal" href="_modules/data_structures.html#ListStack"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#data_structures.ListStack" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implement a <strong>stack</strong> - Using python lists</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">q</span> <span class="o">=</span> <span class="n">data_structures</span><span class="o">.</span><span class="n">ListStack</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span> <span class="n">q</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span> <span class="k">print</span> <span class="n">q</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+<span class="go">4</span>
+<span class="go">3</span>
+<span class="go">2</span>
+<span class="go">1</span>
+<span class="go">0</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="data_structures.ListStack.is_empty">
+<code class="descname">is_empty</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; bool<a class="reference internal" href="_modules/data_structures.html#ListStack.is_empty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#data_structures.ListStack.is_empty" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="data_structures.ListStack.peek">
+<code class="descname">peek</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; item<a class="reference internal" href="_modules/data_structures.html#ListStack.peek"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#data_structures.ListStack.peek" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="data_structures.ListStack.pop">
+<code class="descname">pop</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; item<a class="reference internal" href="_modules/data_structures.html#ListStack.pop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#data_structures.ListStack.pop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="data_structures.ListStack.push">
+<code class="descname">push</code><span class="sig-paren">(</span><em>item</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/data_structures.html#ListStack.push"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#data_structures.ListStack.push" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="data_structures.ListStack.size">
+<code class="descname">size</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/data_structures.html#ListStack.size"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#data_structures.ListStack.size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="data_structures.Queue2Stacks">
+<em class="property">class </em><code class="descclassname">data_structures.</code><code class="descname">Queue2Stacks</code> &#x2192; stack<a class="reference internal" href="_modules/data_structures.html#Queue2Stacks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#data_structures.Queue2Stacks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implement a <strong>queue</strong> - Using two stacks (python lists)</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">q</span> <span class="o">=</span> <span class="n">data_structures</span><span class="o">.</span><span class="n">Queue2Stacks</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span> <span class="n">q</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span> <span class="k">print</span> <span class="n">q</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+<span class="go">0</span>
+<span class="go">1</span>
+<span class="go">2</span>
+<span class="go">3</span>
+<span class="go">4</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="data_structures.Queue2Stacks.pop">
+<code class="descname">pop</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; item<a class="reference internal" href="_modules/data_structures.html#Queue2Stacks.pop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#data_structures.Queue2Stacks.pop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="data_structures.Queue2Stacks.push">
+<code class="descname">push</code><span class="sig-paren">(</span><em>item</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/data_structures.html#Queue2Stacks.push"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#data_structures.Queue2Stacks.push" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="recursion.html" class="btn btn-neutral float-right" title="Recursive Functions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Welcome to python_examples’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Greg Dahlman.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

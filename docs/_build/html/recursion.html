@@ -1,0 +1,333 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Recursive Functions &mdash; python_examples 0.1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="python_examples 0.1.0 documentation" href="index.html"/>
+        <link rel="prev" title="Basic Data Structures" href="data_structures.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> python_examples
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="data_structures.html">Basic Data Structures</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Recursive Functions</a><ul class="simple">
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">python_examples</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Recursive Functions</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/recursion.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="recursive-functions">
+<h1>Recursive Functions<a class="headerlink" href="#recursive-functions" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<span class="target" id="module-recursion"></span><p>Coding examples using basic recursion.</p>
+<dl class="function">
+<dt id="recursion.fib_memo">
+<code class="descclassname">recursion.</code><code class="descname">fib_memo</code><span class="sig-paren">(</span><em>int</em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/recursion.html#fib_memo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#recursion.fib_memo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Memoized fibonacci sequence generator</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>num (int): Position in the fibonacci sequence.</dd>
+<dt>Returns:</dt>
+<dd>(int): Value of the fibonacci sequence at <cite>n</cite></dd>
+</dl>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fib_memo</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fib_memo</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<span class="go">6765</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fib_memo</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="go">12586269025</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="recursion.permute">
+<code class="descclassname">recursion.</code><code class="descname">permute</code><span class="sig-paren">(</span><em>str</em><span class="sig-paren">)</span> &#x2192; str<a class="reference internal" href="_modules/recursion.html#permute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#recursion.permute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Outputs a list of all possible permutations a string.</p>
+<p>Note: If a character is repeated, each occurence as distinct.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">permute</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">)</span>
+<span class="go">[&#39;abc&#39;, &#39;acb&#39;, &#39;bac&#39;, &#39;bca&#39;, &#39;cab&#39;, &#39;cba&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">permute</span><span class="p">(</span><span class="s1">&#39;dog&#39;</span><span class="p">)</span>
+<span class="go">[&#39;dog&#39;, &#39;dgo&#39;, &#39;odg&#39;, &#39;ogd&#39;, &#39;gdo&#39;, &#39;god&#39;]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="recursion.rec_fact">
+<code class="descclassname">recursion.</code><code class="descname">rec_fact</code><span class="sig-paren">(</span><em>int</em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/recursion.html#rec_fact"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#recursion.rec_fact" title="Permalink to this definition">¶</a></dt>
+<dd><p>Recursive function which takes an integer and computes the factorial.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">rec_fact</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="c1"># 4*3*2*1 = 24</span>
+<span class="go">24</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="recursion.rec_sum">
+<code class="descclassname">recursion.</code><code class="descname">rec_sum</code><span class="sig-paren">(</span><em>int</em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/recursion.html#rec_sum"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#recursion.rec_sum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Recursive function which takes an integer and computes
+the cumulative sum of 0 to that integer</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">rec_sum</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="go">10</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="recursion.rec_sum_digits">
+<code class="descclassname">recursion.</code><code class="descname">rec_sum_digits</code><span class="sig-paren">(</span><em>int</em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/recursion.html#rec_sum_digits"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#recursion.rec_sum_digits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Recursive function which takes an integer and computes
+the cumulative sum the individual digits of that integer.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sum_digts</span><span class="p">(</span><span class="mi">4321</span><span class="p">)</span>
+<span class="go">10</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="recursion.reverse_string">
+<code class="descclassname">recursion.</code><code class="descname">reverse_string</code><span class="sig-paren">(</span><em>str</em><span class="sig-paren">)</span> &#x2192; str<a class="reference internal" href="_modules/recursion.html#reverse_string"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#recursion.reverse_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reverse a string using recursion.</p>
+<dl class="docutils">
+<dt>Note:</dt>
+<dd>Does not slice (e.g. string[::-1]) or use iteration.</dd>
+</dl>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">reverse_string</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">)</span>
+<span class="go">olleh</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">reverse_string</span><span class="p">(</span><span class="s1">&#39;hello world&#39;</span><span class="p">)</span>
+<span class="go">dlrow olleh</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">reverse_string</span><span class="p">(</span><span class="s1">&#39;123456789&#39;</span><span class="p">)</span>
+<span class="go">987654321</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="recursion.word_split">
+<code class="descclassname">recursion.</code><code class="descname">word_split</code><span class="sig-paren">(</span><em>str</em>, <em>list</em><span class="sig-paren">)</span> &#x2192; list<a class="reference internal" href="_modules/recursion.html#word_split"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#recursion.word_split" title="Permalink to this definition">¶</a></dt>
+<dd><p>If a phrase can be split into a list of words it returns the list.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">word_split</span><span class="p">(</span><span class="s1">&#39;themanran&#39;</span><span class="p">,[</span><span class="s1">&#39;the&#39;</span><span class="p">,</span><span class="s1">&#39;ran&#39;</span><span class="p">,</span><span class="s1">&#39;man&#39;</span><span class="p">])</span>
+<span class="go">[&#39;the&#39;, &#39;man&#39;, &#39;ran&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">word_split</span><span class="p">(</span><span class="s1">&#39;ilovedogsJohn&#39;</span><span class="p">,[</span><span class="s1">&#39;i&#39;</span><span class="p">,</span><span class="s1">&#39;am&#39;</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;dogs&#39;</span><span class="p">,</span><span class="s1">&#39;lover&#39;</span><span class="p">,</span><span class="s1">&#39;love&#39;</span><span class="p">,</span><span class="s1">&#39;John&#39;</span><span class="p">])</span>
+<span class="go">[&#39;i&#39;, &#39;love&#39;, &#39;dogs&#39;, &#39;John&#39;]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="data_structures.html" class="btn btn-neutral" title="Basic Data Structures" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Greg Dahlman.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

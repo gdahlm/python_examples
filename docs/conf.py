@@ -37,7 +37,6 @@ from recommonmark.parser import CommonMarkParser
 extensions = ['sphinx.ext.autodoc',
     'sphinx.ext.doctest',
     'sphinx.ext.coverage',
-    'sphinx.ext.mathjax',
     'sphinx.ext.viewcode',
     'sphinx.ext.githubpages']
 
@@ -168,6 +167,3 @@ texinfo_documents = [
      author, 'python_examples', 'One line description of project.',
      'Miscellaneous'),
 ]
-
-
-
